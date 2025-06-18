@@ -10,13 +10,14 @@
 //     '/(api|trpc)(.*)',
 //   ],
 // };
-import { authMiddleware } from "@clerk/nextjs";
+// middleware.ts
+import { clerkMiddleware } from "@clerk/nextjs/server";
 
-export default authMiddleware();
+export default clerkMiddleware();
 
 export const config = {
   matcher: [
-    "/((?!_next|.*\\..*).*)",     // Protect all routes except static files and _next
-    "/(api|trpc)(.*)"             // Protect all API routes
+    '/((?!_next|.*\\..*).*)',
+    '/(api|trpc)(.*)',
   ],
 };
